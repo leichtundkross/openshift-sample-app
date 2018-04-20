@@ -19,7 +19,8 @@ public class Application {
    }
 
    @RequestMapping("/ip")
-   public String getIp() throws UnknownHostException {
+   public String getIp() throws UnknownHostException, InterruptedException {
+      Thread.sleep(1000);
       InetAddress inetAddress = InetAddress.getLocalHost();
       return inetAddress.getHostAddress();
    }
